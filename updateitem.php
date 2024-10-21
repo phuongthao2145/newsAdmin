@@ -10,9 +10,11 @@ $image = isset($_FILES["image"]["name"]) ? $_FILES["image"]["name"] : "";
 $catagory = $_POST['category'];
 $feature = $_POST['featured'];
 $author = $_POST['author'];
-
+$date = date("Y-m-d");
+$id = $_POST['id'];
+var_dump($content);
 //upload file
-if (isset($_FILES["image"]["name"])) {
+if ($_FILES["image"]["name"]!="") {
   $target_dir = "../news/img/";
   $target_file = $target_dir . basename($_FILES["image"]["name"]);
 
@@ -26,4 +28,4 @@ if (isset($_FILES["image"]["name"])) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
-$item->updateItem($title,$excerpt,$content,$image,$catagory,$feature,$author);
+$item->updateItem($title,$excerpt,$content,$image,$catagory,$feature,$author,$date,$id);

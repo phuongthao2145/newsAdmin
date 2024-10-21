@@ -51,6 +51,7 @@ $getItemById = $item->getItemById($id);
                   <div class="form-group">
                     <label for="inputName">Title</label>
                     <input type="text" name="title" id="inputName" value="<?php echo $value['title'] ?>" class="form-control">
+                    <input type="hidden" name="id" value="<?php echo $id ?>">
                   </div>
                   <div class="form-group">
                     <label for="inputExcerpt">Excerpt</label>
@@ -133,7 +134,7 @@ $getItemById = $item->getItemById($id);
                     </div>
                     <div class="form-group col-md-12">
                       <label for="inputDate">Date</label>
-                      <input readonly type="text" name="" value="<?php echo date_format(date_create_from_format("Y-m-d H:i:s", $value['created_at']), "d/m/Y"); ?>">
+                      <input readonly type="text" name="olddate" value="<?php echo date_format(date_create_from_format("Y-m-d H:i:s", $value['created_at']), "d/m/Y"); ?>">
                       <input type="date" name="date" id="inputName" class="form-control">
                     </div>
                   </div>
